@@ -62,7 +62,7 @@ async (req,res) => {
 
     jsonwebtoken.sign(payload, 
     config.get('jwtToken'),
-    {expiresIn: 360000},
+    {expiresIn: 360000}, //change to 3600 in production
     (error, token) => {
         if(error) throw error;
         res.json({token});
